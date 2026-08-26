@@ -8,6 +8,15 @@ def build_packet(ip, port):
     return packet
 
 
+def main():
+    router_ip = "192.168.1.1"
+    port = 80
+    packet = build_packet(router_ip, port)
+    while(True):
+        scapy.send(packet)
+
+if __name__ == "__main__":
+    main()
 
 
 
